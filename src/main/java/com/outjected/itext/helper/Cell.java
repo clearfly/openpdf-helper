@@ -103,6 +103,11 @@ public class Cell {
         return this;
     }
 
+    public Cell add(com.lowagie.text.Phrase phrase) {
+        cell.setPhrase(phrase);
+        return this;
+    }
+
     public Cell add(Paragraph paragraph) {
         cell.addElement(paragraph.get());
         return this;
