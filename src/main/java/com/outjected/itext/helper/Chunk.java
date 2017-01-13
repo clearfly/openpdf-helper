@@ -53,12 +53,12 @@ public class Chunk {
         chunk.setFont(font.get());
         return this;
     }
-    
-    public Chunk action(PdfAction action){
+
+    public Chunk action(PdfAction action) {
         chunk.setAction(action);
         return this;
     }
-    
+
     public com.lowagie.text.Chunk get() {
         return chunk;
     }

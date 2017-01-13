@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Paragraph {
 
     private com.lowagie.text.Paragraph paragraph;
-    private ArrayList<com.lowagie.text.Phrase> phrases = new ArrayList<com.lowagie.text.Phrase>();
+    private ArrayList<com.lowagie.text.Phrase> phrases = new ArrayList<>();
 
     public Paragraph() {
         paragraph = new com.lowagie.text.Paragraph();

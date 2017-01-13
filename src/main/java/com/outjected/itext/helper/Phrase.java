@@ -8,15 +8,22 @@ import java.util.ArrayList;
  */
 public class Phrase {
     private com.lowagie.text.Phrase phrase = new com.lowagie.text.Phrase();
-    private float textSize = 10;
-    private TextStyle textStyle = TextStyle.NORMAL;
-    private Color color = Color.BLACK;
+    private Font font = new Font();
     private Chunk chunk;
     private boolean underline;
-    private ArrayList<Chunk> chunks = new ArrayList<Chunk>();
+    private ArrayList<Chunk> chunks = new ArrayList<>();
 
     public Phrase() {
+        this.font = new Font();
+    }
 
+    public Phrase(Font font) {
+        this.font = font;
+    }
+
+    public Phrase(Font font, String content) {
+        this.font = font;
+        this.chunk = new Chunk(content);
     }
 
     public Phrase(String content) {
@@ -31,6 +38,10 @@ public class Phrase {
         return new Phrase(content);
     }
 
+    public static Phrase instance(Font font) {
+        return new Phrase(font);
+    }
+
     public static Phrase instance(Chunk chunk) {
         return new Phrase(chunk);
     }
@@ -40,23 +51,22 @@ public class Phrase {
     }
 
     public Phrase textSize(float textSize) {
-        this.textSize = textSize;
+        font = font.with(textSize);
         return this;
     }
 
     public Phrase textStyle(TextStyle textStyle) {
-        this.textStyle = textStyle;
+        font = font.with(textStyle);
         return this;
     }
 
     public Phrase styleSize(StyleSize styleSize) {
-        this.textSize = styleSize.getSize();
-        this.textStyle = styleSize.getStyle();
+        font = font.with(styleSize);
         return this;
     }
 
     public Phrase color(Color color) {
-        this.color = color;
+        font.with(color);
         return this;
     }
 
@@ -77,12 +87,7 @@ public class Phrase {
 
     public com.lowagie.text.Phrase get() {
         if (chunks.isEmpty()) {
-            Font f = new Font();
-            f.size(textSize);
-            f.style(textStyle);
-            f.color(color);
-
-            chunk.font(f);
+            chunk.font(font);
 
             if (underline) {
                 chunk.underline(.5f, -2f);
@@ -97,5 +102,10 @@ public class Phrase {
         }
 
         return phrase;
+    }
+
+    public Phrase add(String content) {
+        chunks.add(Chunk.instance(content).font(font));
+        return this;
     }
 }
