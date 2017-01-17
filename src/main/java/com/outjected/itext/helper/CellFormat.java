@@ -22,11 +22,11 @@ public class CellFormat {
     private VerticalAlignment verticalAlignment = VerticalAlignment.MIDDLE;
 
     public CellFormat() {
-        this.padding = 5f;
-        this.border = 0f;
+        this.padding = new Float(5f);
+        this.border = new Float(0f);
     }
 
-    public CellFormat(float padding, float border) {
+    public CellFormat(Float padding, Float border) {
         this.padding = padding;
         this.border = border;
     }
