@@ -17,7 +17,7 @@ public class Chunk {
     }
 
     public Chunk(String content, Font font) {
-        chunk = new com.lowagie.text.Chunk(content, font.get());
+        chunk = new com.lowagie.text.Chunk(content, font.itextValue());
     }
 
     public static Chunk instance(String s) {
@@ -32,17 +32,32 @@ public class Chunk {
         return new Chunk(com.lowagie.text.Chunk.NEWLINE);
     }
 
+    @Deprecated
     public Chunk textSize(float size) {
+        return size(size);
+    }
+
+    public Chunk size(float size) {
         chunk.getFont().setSize(size);
         return this;
     }
 
+    @Deprecated
     public Chunk textStyle(TextStyle style) {
+        return style(style);
+    }
+
+    @Deprecated
+    public Chunk styleSize(StyleSize styleSize) {
+        return style(styleSize);
+    }
+
+    public Chunk style(TextStyle style) {
         chunk.getFont().setStyle(style.getItextValue());
         return this;
     }
 
-    public Chunk styleSize(StyleSize styleSize) {
+    public Chunk style(StyleSize styleSize) {
         chunk.getFont().setSize(styleSize.getSize());
         chunk.getFont().setStyle(styleSize.getStyle().getItextValue());
         return this;
@@ -58,7 +73,7 @@ public class Chunk {
     }
 
     public Chunk font(Font font) {
-        chunk.setFont(font.get());
+        chunk.setFont(font.itextValue());
         return this;
     }
 

@@ -16,6 +16,7 @@ public class Font {
     private final float size;
     private final TextStyle style;
     private final Color color;
+    private final com.lowagie.text.Font itextValue;
 
     public Font() {
         this(DEFAULT_FONT, DEFAULT_SIZE, DEFAULT_STYLE, DEFAULT_COLOR);
@@ -26,6 +27,7 @@ public class Font {
         this.size = size;
         this.style = style;
         this.color = color;
+        this.itextValue = new com.lowagie.text.Font(baseFont.getItextValue(), size, style.getItextValue(), color);
     }
 
     public Font(float size) {
@@ -65,8 +67,8 @@ public class Font {
         return new Font(baseFont, size, style, color);
     }
 
-    public com.lowagie.text.Font get() {
-        return new com.lowagie.text.Font(baseFont.getItextValue(), size, style.getItextValue(), color);
+    public com.lowagie.text.Font itextValue() {
+        return itextValue;
     }
 
     public enum ItextFont {

@@ -50,23 +50,43 @@ public class Phrase {
         return new Phrase();
     }
 
-    public Phrase textSize(float textSize) {
-        font = font.with(textSize);
+    @Deprecated
+    public Phrase textSize(float fontSize) {
+        return size(fontSize);
+    }
+
+    public Phrase size(float fontSize) {
+        font = font.with(fontSize);
         return this;
     }
 
+    @Deprecated
     public Phrase textStyle(TextStyle textStyle) {
+        return style(textStyle);
+    }
+
+    @Deprecated
+    public Phrase styleSize(StyleSize styleSize) {
+        return style(styleSize);
+    }
+
+    public Phrase style(TextStyle textStyle) {
         font = font.with(textStyle);
         return this;
     }
 
-    public Phrase styleSize(StyleSize styleSize) {
+    public Phrase style(StyleSize styleSize) {
         font = font.with(styleSize);
         return this;
     }
 
     public Phrase color(Color color) {
         font = font.with(color);
+        return this;
+    }
+
+    public Phrase font(Font font) {
+        this.font = font;
         return this;
     }
 
