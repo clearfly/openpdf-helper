@@ -66,7 +66,7 @@ public class Phrase {
     }
 
     public Phrase color(Color color) {
-        font.with(color);
+        font = font.with(color);
         return this;
     }
 
