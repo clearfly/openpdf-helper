@@ -12,12 +12,20 @@ public class Chunk {
         this.chunk = chunk;
     }
 
-    public Chunk(String s) {
-        chunk = new com.lowagie.text.Chunk(s);
+    public Chunk(String content) {
+        chunk = new com.lowagie.text.Chunk(content);
+    }
+
+    public Chunk(String content, Font font) {
+        chunk = new com.lowagie.text.Chunk(content, font.get());
     }
 
     public static Chunk instance(String s) {
         return new Chunk(s);
+    }
+
+    public static Chunk instance(String s, Font font) {
+        return new Chunk(s, font);
     }
 
     public static Chunk newLine() {

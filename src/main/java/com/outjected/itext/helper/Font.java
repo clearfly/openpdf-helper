@@ -28,8 +28,16 @@ public class Font {
         this.color = color;
     }
 
+    public Font(float size) {
+        this(DEFAULT_FONT, size, DEFAULT_STYLE, DEFAULT_COLOR);
+    }
+
     public Font(ItextFont baseFont, float size) {
         this(baseFont, size, DEFAULT_STYLE, DEFAULT_COLOR);
+    }
+
+    public Font(ItextFont baseFont) {
+        this(baseFont, DEFAULT_SIZE, DEFAULT_STYLE, DEFAULT_COLOR);
     }
 
     public Font with(ItextFont baseFont, float size) {
@@ -75,5 +83,4 @@ public class Font {
             return itextValue;
         }
     }
-
 }

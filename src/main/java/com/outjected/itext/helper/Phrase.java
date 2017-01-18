@@ -27,7 +27,7 @@ public class Phrase {
     }
 
     public Phrase(String content) {
-        chunk = new Chunk(content);
+        chunk = new Chunk(content, font);
     }
 
     public Phrase(Chunk chunk) {
@@ -105,7 +105,7 @@ public class Phrase {
     }
 
     public Phrase add(String content) {
-        chunks.add(Chunk.instance(content).font(font));
+        chunks.add(Chunk.instance(content, font));
         return this;
     }
 }
