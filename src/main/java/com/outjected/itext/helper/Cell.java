@@ -99,6 +99,11 @@ public class Cell {
         return this;
     }
 
+    public Cell add(Chunk chunk) {
+        cell.addElement(chunk.get());
+        return this;
+    }
+
     public Cell add(Phrase phrase) {
         cell.setPhrase(phrase.get());
         return this;

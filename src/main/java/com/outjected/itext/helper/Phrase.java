@@ -9,8 +9,6 @@ import java.util.ArrayList;
 public class Phrase {
     private com.lowagie.text.Phrase phrase = new com.lowagie.text.Phrase();
     private Font font = new Font();
-    private Chunk chunk;
-    private boolean underline;
     private ArrayList<Chunk> chunks = new ArrayList<>();
 
     public Phrase() {
@@ -23,11 +21,11 @@ public class Phrase {
 
     public Phrase(Font font, String content) {
         this.font = font;
-        this.chunk = new Chunk(content);
+        chunks.add(new Chunk(content));
     }
 
     public Phrase(String content) {
-        chunk = new Chunk(content, font);
+        chunks.add(new Chunk(content));
     }
 
     public Phrase(Chunk chunk) {
@@ -70,11 +68,6 @@ public class Phrase {
         return this;
     }
 
-    public Phrase underline() {
-        underline = true;
-        return this;
-    }
-
     public Phrase leading(float leading) {
         phrase.setLeading(leading);
         return this;
@@ -86,21 +79,12 @@ public class Phrase {
     }
 
     public com.lowagie.text.Phrase get() {
-        if (chunks.isEmpty()) {
-            chunk.font(font);
-
-            if (underline) {
-                chunk.underline(.5f, -2f);
+        for (Chunk c : chunks) {
+            if (c.isApplyPhraseFont()) {
+                c.font(font);
             }
-
-            phrase.add(chunk.get());
+            phrase.add(c.get());
         }
-        else {
-            for (Chunk c : chunks) {
-                phrase.add(c.get());
-            }
-        }
-
         return phrase;
     }
 

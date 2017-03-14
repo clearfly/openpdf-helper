@@ -11,4 +11,12 @@ public class ITextFactory {
     public Phrase phrase(String content) {
         return new Phrase(font, content);
     }
+
+    public Phrase phrase() {
+        return new Phrase(font);
+    }
+
+    public Chunk chunk(String string) {
+        return new Chunk(string, font);
+    }
 }

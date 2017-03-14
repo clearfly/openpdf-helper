@@ -6,7 +6,8 @@ import com.lowagie.text.pdf.PdfAction;
  * @author Cody Lerum
  */
 public class Chunk {
-    private com.lowagie.text.Chunk chunk;
+    private final com.lowagie.text.Chunk chunk;
+    private boolean applyPhraseFont = true;
 
     private Chunk(com.lowagie.text.Chunk chunk) {
         this.chunk = chunk;
@@ -17,7 +18,8 @@ public class Chunk {
     }
 
     public Chunk(String content, Font font) {
-        chunk = new com.lowagie.text.Chunk(content, font.get());
+        this.chunk = new com.lowagie.text.Chunk(content, font.get());
+        this.applyPhraseFont = false;
     }
 
     public static Chunk instance(String s) {
@@ -34,17 +36,20 @@ public class Chunk {
 
     public Chunk textSize(float size) {
         chunk.getFont().setSize(size);
+        applyPhraseFont = false;
         return this;
     }
 
     public Chunk textStyle(TextStyle style) {
         chunk.getFont().setStyle(style.getItextValue());
+        applyPhraseFont = false;
         return this;
     }
 
     public Chunk styleSize(StyleSize styleSize) {
         chunk.getFont().setSize(styleSize.getSize());
         chunk.getFont().setStyle(styleSize.getStyle().getItextValue());
+        applyPhraseFont = false;
         return this;
     }
 
@@ -59,6 +64,7 @@ public class Chunk {
 
     public Chunk font(Font font) {
         chunk.setFont(font.get());
+        applyPhraseFont = false;
         return this;
     }
 
@@ -69,5 +75,9 @@ public class Chunk {
 
     public com.lowagie.text.Chunk get() {
         return chunk;
+    }
+
+    public boolean isApplyPhraseFont() {
+        return applyPhraseFont;
     }
 }
