@@ -13,7 +13,6 @@ import com.lowagie.text.pdf.PdfPCell;
 public class Cell {
     private PdfPCell cell;
 
-    @SuppressWarnings("boxing")
     public Cell(CellFormat cellFormat) {
         cell = new PdfPCell();
 
