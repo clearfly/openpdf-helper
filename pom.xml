@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.outjected</groupId>
 	<artifactId>itext-helper</artifactId>
-	<version>2.2.2</version>
+	<version>2.2.3</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.java>1.8</version.java>
-		<version.plugin.compiler>3.8.0</version.plugin.compiler>
-		<version.plugin.source>3.0.1</version.plugin.source>
+		<version.plugin.compiler>3.8.1</version.plugin.compiler>
+		<version.plugin.source>3.1.0</version.plugin.source>
 	</properties>
 
 	<distributionManagement>
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>com.github.librepdf</groupId>
 			<artifactId>openpdf</artifactId>
-			<version>1.2.10</version>
+			<version>1.2.17</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
