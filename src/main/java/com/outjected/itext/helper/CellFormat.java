@@ -22,8 +22,8 @@ public class CellFormat {
     private VerticalAlignment verticalAlignment = VerticalAlignment.MIDDLE;
 
     public CellFormat() {
-        this.padding = new Float(5f);
-        this.border = new Float(0f);
+        this.padding = 5f;
+        this.border = 0f;
     }
 
     public CellFormat(Float padding, Float border) {
