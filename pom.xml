@@ -13,16 +13,22 @@
 		<version.plugin.source>3.2.1</version.plugin.source>
 	</properties>
 
+	<scm>
+		<connection>scm:git:git://github.com/codylerum/itext-helper.git</connection>
+		<developerConnection>scm:git:git@github.com:codylerum/itext-helper.git</developerConnection>
+		<url>https://github.com/codylerum/itext-helper</url>
+	</scm>
+
 	<distributionManagement>
 		<repository>
-			<id>central</id>
-			<name>calcium-releases</name>
-			<url>http://calcium.clearfly.net:8081/artifactory/libs-release</url>
+			<id>github</id>
+			<name>GitHub Clearfly Maven Repository</name>
+			<url>https://maven.pkg.github.com/clearfly/mvn</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
-			<name>calcium-snapshots</name>
-			<url>http://calcium.clearfly.net:8081/artifactory/libs-snapshot</url>
+			<id>github</id>
+			<name>GitHub Clearfly Maven Repository</name>
+			<url>https://maven.pkg.github.com/clearfly/mvn</url>
 		</snapshotRepository>
 	</distributionManagement>
 
