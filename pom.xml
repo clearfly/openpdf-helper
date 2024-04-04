@@ -9,7 +9,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.java>17</version.java>
 		<version.openpdf>2.0.1</version.openpdf>
-		<version.plugin.compiler>3.12.1</version.plugin.compiler>
+		<version.plugin.compiler>3.13.0</version.plugin.compiler>
 		<version.plugin.source>3.3.0</version.plugin.source>
 	</properties>
 
