@@ -1,22 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.outjected</groupId>
-	<artifactId>itext-helper</artifactId>
-	<version>2.3.1</version>
+	<groupId>co.cfly</groupId>
+	<artifactId>openpdf-helper</artifactId>
+	<version>3.0.0-SNAPSHOT</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<version.java>17</version.java>
+		<version.java>21</version.java>
 		<version.openpdf>2.0.1</version.openpdf>
 		<version.plugin.compiler>3.13.0</version.plugin.compiler>
 		<version.plugin.source>3.3.0</version.plugin.source>
 	</properties>
 
 	<scm>
-		<connection>scm:git:git://github.com/codylerum/itext-helper.git</connection>
-		<developerConnection>scm:git:git@github.com:codylerum/itext-helper.git</developerConnection>
-		<url>https://github.com/codylerum/itext-helper</url>
+		<connection>scm:git:git://github.com/clearfly/openpdf-helper.git</connection>
+		<developerConnection>scm:git:git@github.com:clearfly/openpdf-helper.git</developerConnection>
+		<url>https://github.com/clearfly/openpdf-helper</url>
 	</scm>
 
 	<distributionManagement>

@@ -1,4 +1,4 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
 /**
  * @author Cody Lerum
@@ -24,8 +24,8 @@ public enum StyleSize {
     NORMAL14(14, TextStyle.NORMAL),
     BOLD14(14, TextStyle.BOLD);
 
-    private float size;
-    private TextStyle style;
+    private final float size;
+    private final TextStyle style;
 
     private StyleSize(float size, TextStyle style) {
         this.size = size;

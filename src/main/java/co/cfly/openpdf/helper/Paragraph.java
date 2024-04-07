@@ -1,24 +1,17 @@
-package com.outjected.itext.helper;
-
-import java.util.ArrayList;
+package co.cfly.openpdf.helper;
 
 /**
- * 
  * @author Cody Lerum
- * 
  */
-public class Paragraph {
-
-    private com.lowagie.text.Paragraph paragraph;
-    private ArrayList<com.lowagie.text.Phrase> phrases = new ArrayList<>();
+public class Paragraph extends com.lowagie.text.Paragraph {
 
     public Paragraph() {
-        paragraph = new com.lowagie.text.Paragraph();
+        super();
     }
 
     public Paragraph(Phrase phrase) {
-        paragraph = new com.lowagie.text.Paragraph();
-        phrases.add(phrase.get());
+        super();
+        this.add(phrase);
     }
 
     public static Paragraph instance() {
@@ -30,62 +23,57 @@ public class Paragraph {
     }
 
     public Paragraph add(Chunk chunk) {
-        phrases.add(Phrase.instance(chunk).get());
+        super.add(Phrase.instance(chunk));
         return this;
     }
 
     public Paragraph add(Phrase phrase) {
-        phrases.add(phrase.get());
+        super.add(phrase);
         return this;
     }
 
     public Paragraph add(Table table) {
-        paragraph.add(table.get());
+        super.add(table);
         return this;
     }
 
     public Paragraph add(Anchor anchor) {
-        paragraph.add(anchor.get());
+        super.add(anchor);
         return this;
     }
 
     public Paragraph spacingBefore(float spacing) {
-        paragraph.setSpacingBefore(spacing);
+        setSpacingBefore(spacing);
         return this;
     }
 
     public Paragraph spacingAfter(float spacing) {
-        paragraph.setSpacingAfter(spacing);
+        setSpacingAfter(spacing);
         return this;
     }
 
     public Paragraph firstIndent(float indent) {
-        paragraph.setFirstLineIndent(indent);
+        setFirstLineIndent(indent);
         return this;
     }
 
     public Paragraph indentLeft(float indent) {
-        paragraph.setIndentationLeft(indent);
+        setIndentationLeft(indent);
         return this;
     }
 
     public Paragraph indentRight(float indent) {
-        paragraph.setIndentationRight(indent);
+        setIndentationRight(indent);
         return this;
     }
 
     public Paragraph alignment(HorizontalAlignment horizontalAlignment) {
-        paragraph.setAlignment(horizontalAlignment.getItextValue());
+        setAlignment(horizontalAlignment.getItextValue());
         return this;
     }
 
     public Paragraph leading(float leading) {
-        paragraph.setLeading(leading);
+        setLeading(leading);
         return this;
-    }
-
-    public com.lowagie.text.Paragraph get() {
-        paragraph.addAll(phrases);
-        return paragraph;
     }
 }

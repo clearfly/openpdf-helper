@@ -1,4 +1,4 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
 import com.lowagie.text.Element;
 
@@ -10,7 +10,7 @@ public enum VerticalAlignment {
     MIDDLE(Element.ALIGN_MIDDLE),
     BOTTOM(Element.ALIGN_BOTTOM);
 
-    private int itextValue;
+    private final int itextValue;
 
     private VerticalAlignment(int itextValue) {
         this.itextValue = itextValue;

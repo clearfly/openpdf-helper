@@ -1,4 +1,4 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
 import com.lowagie.text.Element;
 
@@ -11,7 +11,7 @@ public enum HorizontalAlignment {
     RIGHT(Element.ALIGN_RIGHT),
     JUSTIFIED(Element.ALIGN_JUSTIFIED);
 
-    private int itextValue;
+    private final int itextValue;
 
     private HorizontalAlignment(int itextValue) {
         this.itextValue = itextValue;
