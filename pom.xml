@@ -10,7 +10,7 @@
 		<version.java>17</version.java>
 		<version.openpdf>2.0.1</version.openpdf>
 		<version.plugin.compiler>3.13.0</version.plugin.compiler>
-		<version.plugin.source>3.3.0</version.plugin.source>
+		<version.plugin.source>3.3.1</version.plugin.source>
 	</properties>
 
 	<scm>
