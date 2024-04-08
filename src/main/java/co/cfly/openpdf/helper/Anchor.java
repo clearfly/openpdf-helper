@@ -1,21 +1,20 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
 /**
  * @author Cody Lerum
  */
-public class Anchor {
-    private com.lowagie.text.Anchor anchor;
+public class Anchor extends com.lowagie.text.Anchor {
 
     public Anchor() {
-        anchor = new com.lowagie.text.Anchor();
+        super();
     }
 
     public Anchor(Phrase phrase) {
-        anchor = new com.lowagie.text.Anchor(phrase.get());
+        super(phrase);
     }
 
     public Anchor(Chunk chunk) {
-        anchor = new com.lowagie.text.Anchor(chunk.get());
+        super(chunk);
     }
 
     public static Anchor instance() {
@@ -31,16 +30,12 @@ public class Anchor {
     }
 
     public Anchor name(String name) {
-        anchor.setName(name);
+        setName(name);
         return this;
     }
 
     public Anchor docReference(String reference) {
-        anchor.setReference("#" + reference);
+        setReference("#" + reference);
         return this;
-    }
-
-    public com.lowagie.text.Anchor get() {
-        return anchor;
     }
 }

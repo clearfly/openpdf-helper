@@ -1,8 +1,8 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
 public class ITextFactory {
 
-    private Font font;
+    private final Font font;
 
     public ITextFactory(Font font) {
         this.font = font;

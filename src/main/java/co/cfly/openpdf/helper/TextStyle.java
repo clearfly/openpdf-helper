@@ -1,4 +1,4 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
 import com.lowagie.text.Font;
 
@@ -11,7 +11,7 @@ public enum TextStyle {
     BOLD_ITALIC(Font.BOLDITALIC),
     ITALIC(Font.ITALIC);
 
-    private int itextValue;
+    private final int itextValue;
 
     private TextStyle(int itextValue) {
         this.itextValue = itextValue;

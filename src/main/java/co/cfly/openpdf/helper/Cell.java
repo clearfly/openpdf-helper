@@ -1,56 +1,52 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
-import java.awt.Color;
+import java.awt.*;
 
 import com.lowagie.text.Image;
 import com.lowagie.text.pdf.PdfPCell;
 
 /**
- * 
  * @author Cody Lerum
- * 
  */
-public class Cell {
-    private PdfPCell cell;
+public class Cell extends PdfPCell {
 
     public Cell(CellFormat cellFormat) {
-        cell = new PdfPCell();
-
-        cell.setHorizontalAlignment(cellFormat.getHorizontalAlignment().getItextValue());
-        cell.setVerticalAlignment(cellFormat.getVerticalAlignment().getItextValue());
+        super();
+        setHorizontalAlignment(cellFormat.getHorizontalAlignment().getItextValue());
+        setVerticalAlignment(cellFormat.getVerticalAlignment().getItextValue());
 
         if (cellFormat.getPadding() != null) {
-            cell.setPadding(cellFormat.getPadding());
+            setPadding(cellFormat.getPadding());
         }
         if (cellFormat.getPaddingLeft() != null) {
-            cell.setPaddingLeft(cellFormat.getPaddingLeft());
+            setPaddingLeft(cellFormat.getPaddingLeft());
         }
         if (cellFormat.getPaddingRight() != null) {
-            cell.setPaddingRight(cellFormat.getPaddingRight());
+            setPaddingRight(cellFormat.getPaddingRight());
         }
         if (cellFormat.getPaddingTop() != null) {
-            cell.setPaddingTop(cellFormat.getPaddingTop());
+            setPaddingTop(cellFormat.getPaddingTop());
         }
         if (cellFormat.getPaddingBottom() != null) {
-            cell.setPaddingBottom(cellFormat.getPaddingBottom());
+            setPaddingBottom(cellFormat.getPaddingBottom());
         }
         if (cellFormat.getBorder() != null) {
-            cell.setBorderWidth(cellFormat.getBorder());
+            setBorderWidth(cellFormat.getBorder());
         }
         if (cellFormat.getBorderLeft() != null) {
-            cell.setBorderWidthLeft(cellFormat.getBorderLeft());
+            setBorderWidthLeft(cellFormat.getBorderLeft());
         }
         if (cellFormat.getBorderRight() != null) {
-            cell.setBorderWidthRight(cellFormat.getBorderRight());
+            setBorderWidthRight(cellFormat.getBorderRight());
         }
         if (cellFormat.getBorderTop() != null) {
-            cell.setBorderWidthTop(cellFormat.getBorderTop());
+            setBorderWidthTop(cellFormat.getBorderTop());
         }
         if (cellFormat.getBorderBottom() != null) {
-            cell.setBorderWidthBottom(cellFormat.getBorderBottom());
+            setBorderWidthBottom(cellFormat.getBorderBottom());
         }
 
-        cell.setNoWrap(cellFormat.isNoWrap());
+        setNoWrap(cellFormat.isNoWrap());
     }
 
     public Cell() {
@@ -59,17 +55,17 @@ public class Cell {
 
     public Cell(int colSpan) {
         this(new CellFormat());
-        cell.setColspan(colSpan);
+        setColspan(colSpan);
     }
 
     public Cell(CellFormat cellFormat, int colSpan) {
         this(cellFormat);
-        cell.setColspan(colSpan);
+        setColspan(colSpan);
     }
 
     public Cell(Image image) {
-        cell = new PdfPCell(image, false);
-        cell.setBorder(0);
+        super(image, false);
+        setBorder(0);
     }
 
     public static Cell instance() {
@@ -89,121 +85,117 @@ public class Cell {
     }
 
     public Cell colSpan(int colSpan) {
-        cell.setColspan(colSpan);
+        setColspan(colSpan);
         return this;
     }
 
     public Cell add(Anchor anchor) {
-        cell.setPhrase(anchor.get());
+        setPhrase(anchor);
         return this;
     }
 
     public Cell add(Chunk chunk) {
-        cell.addElement(chunk.get());
+        addElement(chunk);
         return this;
     }
 
     public Cell add(Phrase phrase) {
-        cell.setPhrase(phrase.get());
+        setPhrase(phrase);
         return this;
     }
 
     public Cell add(com.lowagie.text.Phrase phrase) {
-        cell.setPhrase(phrase);
+        setPhrase(phrase);
         return this;
     }
 
     public Cell add(Paragraph paragraph) {
-        cell.addElement(paragraph.get());
+        addElement(paragraph);
         return this;
     }
 
     public Cell add(Table table) {
-        cell.addElement(table.get());
+        addElement(table);
         return this;
     }
 
     public Cell add(Image image) {
-        cell.addElement(image);
+        addElement(image);
         return this;
     }
 
     public Cell horizontalAlignment(HorizontalAlignment horizontalAlignment) {
-        cell.setHorizontalAlignment(horizontalAlignment.getItextValue());
+        setHorizontalAlignment(horizontalAlignment.getItextValue());
         return this;
     }
 
     public Cell verticalAlignment(VerticalAlignment verticalAlignment) {
-        cell.setVerticalAlignment(verticalAlignment.getItextValue());
+        setVerticalAlignment(verticalAlignment.getItextValue());
         return this;
     }
 
     public Cell borderWidth(float width) {
-        cell.setBorderWidth(width);
+        setBorderWidth(width);
         return this;
     }
 
     public Cell height(float height) {
-        cell.setFixedHeight(height);
+        setFixedHeight(height);
         return this;
     }
 
     public Cell borderWidthTop(float width) {
-        cell.setBorderWidthTop(width);
+        setBorderWidthTop(width);
         return this;
     }
 
     public Cell borderWidthBottom(float width) {
-        cell.setBorderWidthBottom(width);
+        setBorderWidthBottom(width);
         return this;
     }
 
     public Cell borderWidthLeft(float width) {
-        cell.setBorderWidthLeft(width);
+        setBorderWidthLeft(width);
         return this;
     }
 
     public Cell borderWidthRight(float width) {
-        cell.setBorderWidthRight(width);
+        setBorderWidthRight(width);
         return this;
     }
 
     public Cell padding(float padding) {
-        cell.setPadding(padding);
+        setPadding(padding);
         return this;
     }
 
     public Cell paddingLeft(float padding) {
-        cell.setPaddingLeft(padding);
+        setPaddingLeft(padding);
         return this;
     }
 
     public Cell paddingRight(float padding) {
-        cell.setPaddingRight(padding);
+        setPaddingRight(padding);
         return this;
     }
 
     public Cell paddingTop(float padding) {
-        cell.setPaddingTop(padding);
+        setPaddingTop(padding);
         return this;
     }
 
     public Cell paddingBottom(float padding) {
-        cell.setPaddingBottom(padding);
+        setPaddingBottom(padding);
         return this;
     }
 
     public Cell backgroundColor(Color color) {
-        cell.setBackgroundColor(color);
+        setBackgroundColor(color);
         return this;
     }
 
     public Cell borderColor(Color color) {
-        cell.setBorderColor(color);
+        setBorderColor(color);
         return this;
-    }
-
-    public PdfPCell get() {
-        return cell;
     }
 }

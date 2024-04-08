@@ -1,9 +1,10 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
 /**
  * @author Cody Lerum
  */
 public class CellFormat {
+
     private Float padding;
     private Float paddingLeft;
     private Float paddingRight;
@@ -134,5 +135,4 @@ public class CellFormat {
     public void setVerticalAlignment(VerticalAlignment verticalAlignment) {
         this.verticalAlignment = verticalAlignment;
     }
-
 }

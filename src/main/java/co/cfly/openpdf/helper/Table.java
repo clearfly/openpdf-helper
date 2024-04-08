@@ -1,22 +1,17 @@
-package com.outjected.itext.helper;
+package co.cfly.openpdf.helper;
 
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
-import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 
 /**
- * 
  * @author Cody Lerum
- * 
  */
-public class Table {
-    private PdfPTable table;
+public class Table extends PdfPTable {
 
     public Table(int columns) {
-        table = new PdfPTable(columns);
-
-        table.setWidthPercentage(100);
+        super(columns);
+        setWidthPercentage(100);
     }
 
     public static Table instance(int columns) {
@@ -24,56 +19,47 @@ public class Table {
     }
 
     public Table totalWidth(float width) {
-        table.setTotalWidth(width);
+        setTotalWidth(width);
         return this;
     }
 
     public Table width(float widthPercentage) {
-        table.setWidthPercentage(widthPercentage);
+        setWidthPercentage(widthPercentage);
         return this;
     }
 
     public Table widths(float... widths) throws DocumentException {
-        table.setWidths(widths);
+        setWidths(widths);
         return this;
     }
 
     public Table addCell(Cell cell) {
-        table.addCell(cell.get());
+        super.addCell(cell);
         return this;
     }
 
-    public Table addCell(Image image) {
-        table.addCell(image);
+    public Table addImageCell(Image image) {
+        super.addCell(image);
         return this;
     }
 
     public Table extendLastRow(boolean extend) {
-        table.setExtendLastRow(extend);
+        setExtendLastRow(extend);
         return this;
     }
 
     public Table headerRows(int rows) {
-        table.setHeaderRows(rows);
+        setHeaderRows(rows);
         return this;
     }
 
     public Table footerRows(int rows) {
-        table.setFooterRows(rows);
+        setFooterRows(rows);
         return this;
     }
 
     public Table skipLastFooter() {
-        table.setSkipLastFooter(true);
+        setSkipLastFooter(true);
         return this;
     }
-
-    public PdfPCell getDefaultCell() {
-        return table.getDefaultCell();
-    }
-
-    public PdfPTable get() {
-        return table;
-    }
-
 }
