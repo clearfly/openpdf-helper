@@ -3,7 +3,7 @@ package co.cfly.openpdf.helper;
 /**
  * @author Cody Lerum
  */
-public class Paragraph extends com.lowagie.text.Paragraph {
+public class Paragraph extends org.openpdf.text.Paragraph {
 
     public Paragraph() {
         super();

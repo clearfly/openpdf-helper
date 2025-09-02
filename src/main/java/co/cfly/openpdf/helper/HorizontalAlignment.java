@@ -1,6 +1,6 @@
 package co.cfly.openpdf.helper;
 
-import com.lowagie.text.Element;
+import org.openpdf.text.Element;
 
 /**
  * @author Cody Lerum
@@ -13,7 +13,7 @@ public enum HorizontalAlignment {
 
     private final int itextValue;
 
-    private HorizontalAlignment(int itextValue) {
+    HorizontalAlignment(int itextValue) {
         this.itextValue = itextValue;
     }
 
