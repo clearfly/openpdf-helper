@@ -3,7 +3,7 @@ package co.cfly.openpdf.helper;
 /**
  * @author Cody Lerum
  */
-public class Anchor extends com.lowagie.text.Anchor {
+public class Anchor extends org.openpdf.text.Anchor {
 
     public Anchor() {
         super();

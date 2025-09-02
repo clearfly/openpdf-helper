@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  * @author Cody Lerum
  */
-public class Phrase extends com.lowagie.text.Phrase {
+public class Phrase extends org.openpdf.text.Phrase {
 
     public Phrase() {
         super();
@@ -53,22 +53,22 @@ public class Phrase extends com.lowagie.text.Phrase {
     }
 
     public Phrase textSize(float textSize) {
-        applyFont(new com.lowagie.text.Font(getFont().getBaseFont(), textSize, getFont().getStyle(), getFont().getColor()));
+        applyFont(new org.openpdf.text.Font(getFont().getBaseFont(), textSize, getFont().getStyle(), getFont().getColor()));
         return this;
     }
 
     public Phrase textStyle(TextStyle textStyle) {
-        applyFont(new com.lowagie.text.Font(getFont().getBaseFont(), getFont().getSize(), textStyle.getItextValue(), getFont().getColor()));
+        applyFont(new org.openpdf.text.Font(getFont().getBaseFont(), getFont().getSize(), textStyle.getItextValue(), getFont().getColor()));
         return this;
     }
 
     public Phrase styleSize(StyleSize styleSize) {
-        applyFont(new com.lowagie.text.Font(getFont().getBaseFont(), styleSize.getSize(), styleSize.getStyle().getItextValue(), getFont().getColor()));
+        applyFont(new org.openpdf.text.Font(getFont().getBaseFont(), styleSize.getSize(), styleSize.getStyle().getItextValue(), getFont().getColor()));
         return this;
     }
 
     public Phrase color(Color color) {
-        applyFont(new com.lowagie.text.Font(getFont().getBaseFont(), getFont().getSize(), getFont().getStyle(), color));
+        applyFont(new org.openpdf.text.Font(getFont().getBaseFont(), getFont().getSize(), getFont().getStyle(), color));
         return this;
     }
 
@@ -77,7 +77,7 @@ public class Phrase extends com.lowagie.text.Phrase {
         return this;
     }
 
-    private void applyFont(com.lowagie.text.Font font) {
+    private void applyFont(org.openpdf.text.Font font) {
         setFont(font);
         for (var element : getChunks()) {
             if (element instanceof Chunk chunk && chunk.isApplyPhraseFont()) {

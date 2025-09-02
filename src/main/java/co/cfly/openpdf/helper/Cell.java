@@ -1,9 +1,8 @@
 package co.cfly.openpdf.helper;
 
 import java.awt.*;
-
-import com.lowagie.text.Image;
-import com.lowagie.text.pdf.PdfPCell;
+import org.openpdf.text.Image;
+import org.openpdf.text.pdf.PdfPCell;
 
 /**
  * @author Cody Lerum
@@ -104,7 +103,7 @@ public class Cell extends PdfPCell {
         return this;
     }
 
-    public Cell add(com.lowagie.text.Phrase phrase) {
+    public Cell add(org.openpdf.text.Phrase phrase) {
         setPhrase(phrase);
         return this;
     }

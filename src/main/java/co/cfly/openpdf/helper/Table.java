@@ -1,8 +1,8 @@
 package co.cfly.openpdf.helper;
 
-import com.lowagie.text.DocumentException;
-import com.lowagie.text.Image;
-import com.lowagie.text.pdf.PdfPTable;
+import org.openpdf.text.DocumentException;
+import org.openpdf.text.Image;
+import org.openpdf.text.pdf.PdfPTable;
 
 /**
  * @author Cody Lerum

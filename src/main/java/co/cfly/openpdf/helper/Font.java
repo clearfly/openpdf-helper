@@ -1,13 +1,12 @@
 package co.cfly.openpdf.helper;
 
 import java.awt.*;
-
-import com.lowagie.text.pdf.BaseFont;
+import org.openpdf.text.pdf.BaseFont;
 
 /**
  * @author Cody Lerum
  */
-public class Font extends com.lowagie.text.Font {
+public class Font extends org.openpdf.text.Font {
 
     private static final ItextFont DEFAULT_FONT = ItextFont.HELVETICA;
     private static final float DEFAULT_SIZE = 12;
@@ -71,12 +70,12 @@ public class Font extends com.lowagie.text.Font {
     }
 
     public enum ItextFont {
-        HELVETICA(com.lowagie.text.Font.HELVETICA),
-        TIMES_ROMAN(com.lowagie.text.Font.TIMES_ROMAN);
+        HELVETICA(org.openpdf.text.Font.HELVETICA),
+        TIMES_ROMAN(org.openpdf.text.Font.TIMES_ROMAN);
 
         private final int itextValue;
 
-        private ItextFont(int itextValue) {
+        ItextFont(int itextValue) {
             this.itextValue = itextValue;
         }
 

@@ -1,6 +1,6 @@
 package co.cfly.openpdf.helper;
 
-import com.lowagie.text.Font;
+import org.openpdf.text.Font;
 
 /**
  * @author Cody Lerum
@@ -13,7 +13,7 @@ public enum TextStyle {
 
     private final int itextValue;
 
-    private TextStyle(int itextValue) {
+    TextStyle(int itextValue) {
         this.itextValue = itextValue;
     }
 

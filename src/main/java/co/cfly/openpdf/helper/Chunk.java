@@ -1,11 +1,11 @@
 package co.cfly.openpdf.helper;
 
-import com.lowagie.text.pdf.PdfAction;
+import org.openpdf.text.pdf.PdfAction;
 
 /**
  * @author Cody Lerum
  */
-public class Chunk extends com.lowagie.text.Chunk {
+public class Chunk extends org.openpdf.text.Chunk {
 
     private boolean applyPhraseFont = true;
 

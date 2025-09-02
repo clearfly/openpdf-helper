@@ -2,12 +2,11 @@ package co.cfly.openpdf.helper;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-
-import com.lowagie.text.Document;
-import com.lowagie.text.PageSize;
-import com.lowagie.text.pdf.PdfWriter;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openpdf.text.Document;
+import org.openpdf.text.PageSize;
+import org.openpdf.text.pdf.PdfWriter;
 
 public class CreatePdfTest {
 
@@ -25,7 +24,7 @@ public class CreatePdfTest {
             Assert.assertEquals("Foo", p.getChunks().getFirst().toString());
 
             var element = p.getChunks().getFirst();
-            Assert.assertEquals(6f, ((com.lowagie.text.Chunk) p.getChunks().getFirst()).getFont().getSize(), 0);
+            Assert.assertEquals(6f, ((org.openpdf.text.Chunk) p.getChunks().getFirst()).getFont().getSize(), 0);
             document.add(p);
             document.add(Table.instance(2).addCell(Cell.instance().add(Paragraph.getInstance("Bar"))));
             document.close();
