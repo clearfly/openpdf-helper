@@ -15,7 +15,7 @@ public class CreatePdfTest {
         try (ByteArrayOutputStream os = new ByteArrayOutputStream()) {
             final Document document = new Document(PageSize.LETTER, 20f, 20f, 20f, 50f);
             PdfWriter writer = PdfWriter.getInstance(document, os);
-            writer.setPdfVersion(PdfWriter.VERSION_1_7);
+            writer.setPdfVersion(PdfWriter.PDF_VERSION_2_0);
             writer.setFullCompression();
             document.open();
 
