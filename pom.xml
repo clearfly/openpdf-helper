@@ -8,7 +8,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.java>25</version.java>
-        <version.errorprone>2.50.0</version.errorprone>
+        <version.errorprone>2.51.0</version.errorprone>
         <version.openpdf>2.0.2</version.openpdf>
         <version.plugin.compiler>3.16.0</version.plugin.compiler>
         <version.plugin.source>3.4.0</version.plugin.source>
